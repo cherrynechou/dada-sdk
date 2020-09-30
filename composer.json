@@ -1,0 +1,17 @@
+{
+    "name": "cherrynechou\/dada",
+    "description": "this is dada for laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cherrynechou",
+            "email": "iboy_2008@163.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CherryneChou\\EasyDada\\": "src"
+        }
+    }
+}

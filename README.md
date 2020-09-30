@@ -1,6 +1,6 @@
 <h1 align="center"> dada </h1>
 
-<p align="center"> dada for laravel.</p>
+<p align="center"> this is dada for laravel.</p>
 
 
 ## Installing
