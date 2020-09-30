@@ -32,7 +32,7 @@ class BaseClient
     /**
      * @var string
      */
-    protected $baseUri;
+    protected $baseUri='https://newopen.imdada.cn';
 
     /**
      * 商户ID
@@ -66,34 +66,35 @@ class BaseClient
     public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->initialize();
+        
+        $this->app_key = $this->app['config']->get('app_key');
+        $this->app_secret = $this->app['config']->get('app_secret');
+        $this->source_id =$this->app['config']->get('source_id','');
+
+        if($this->isSandbox()){
+            $this->setSandbox();
+        }
+
     }
 
     /**
-     * 初始化是否为高度模式
+     * @return void
      */
-    public function initialize()
+    protected function setSandbox()
     {
-        $isDebug = $this->isDebug();
-
-        if($isDebug){
-            $this->source_id = "73753";
-            $this->baseUri = "http://newopen.qa.imdada.cn";
-        }else{
-            $this->source_id = $this->app['config']->get('source_id','');
-            $this->baseUri = "https://newopen.imdada.cn";
-        }
-        $this->app_key = $this->app['config']->get('app_key');
-        $this->app_secret = $this->app['config']->get('app_secret');
+        $this->source_id = "73753";
+        $this->baseUri = "http://newopen.qa.imdada.cn";
     }
 
     /**
      * @return boolean
      */
-    public function isDebug()
+    public function isSandbox()
     {
-        return $this->app['config']->get('is_debug', false);
+        return $this->app['config']->get('is_sandbox', false);
     }
+
+
 
     /**
      * @return Client
