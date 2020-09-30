@@ -1,4 +1,4 @@
-<h1 align="center"> dada </h1>
+<h1 align="center"> 达达Sdk </h1>
 
 <p align="center"> this is dada for laravel.</p>
 
@@ -13,15 +13,29 @@ $ composer require cherrynechou/dada -vvv
 
 TODO
 
-## Contributing
+### 配置文件样例
 
-You can contribute in one of three ways:
+#### 达达配置
+$config=[
+    'is_sandbox'=>true,
+    'app_key' => '',
+    'app_secret' => '',
+    'source_id' => '',  
+]
 
-1. File bug reports using the [issue tracker](https://github.com/cherrynechou/dada/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/cherrynechou/dada/issues).
-3. Contribute new features or update the wiki.
 
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
+$app = new Application($config);
+
+### 使用方法
+
+#### 添加门店
+$app->shop->add(...);
+
+#### 添加订单
+$app->order->add(...);
+
+### 获取城市列表
+$app->city->list();
 
 ## License
 
