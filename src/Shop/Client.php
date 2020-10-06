@@ -36,6 +36,6 @@ class Client extends BaseClient
             'origin_shop_id'=>$originId
         ];
 
-        return $this->httpPost('/api/shop/update', $paramKey+params);
+        return $this->httpPost('/api/shop/update', $paramKey+$params);
     }
 }
