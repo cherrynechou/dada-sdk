@@ -5,7 +5,7 @@
  * Date: 2020/9/20 0020
  * Time: 11:55
  */
-namespace CherryneChou\EasyDada\Merchant;
+namespace CherryneChou\EasyDada\Balance;
 
 use CherryneChou\EasyDada\Kernel\BaseClient;
 
@@ -16,13 +16,12 @@ use CherryneChou\EasyDada\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * 注册商户
+     * 查询余额
      * @param array $param
      * @return array
      */
-    public function create($param=[])
+    public function query($param=[])
     {
-        return $this->httpPost('/merchantApi/merchant/add', $param);
+      return $this->httpPost('/api/balance/query', $param);
     }
-
 }

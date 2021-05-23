@@ -24,6 +24,7 @@ class Application extends Container
         City\ServiceProvider::class,
         Order\ServiceProvider::class,
         Shop\ServiceProvider::class,
+        Balance\ServiceProvider::class,
         Merchant\ServiceProvider::class,
     ];
 

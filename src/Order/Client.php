@@ -54,4 +54,45 @@ class Client extends BaseClient
     {
         return $this->httpPost('/api/order/cancel/reasons',$param);
     }
+
+    /**
+     * 订单详情
+     * @param array $param
+     * @return array
+     */
+    public function orderInfo($param=[])
+    {
+        return $this->httpPost('/api/order/status/query',$param);
+    }
+
+    /**
+     * 添加小费
+     * @param array $param
+     * @return array
+     */
+    public function addTip($param=[])
+    {
+        return $this->httpPost('/api/order/addTip',$param);
+    }
+
+    /**
+     * 查询订单运费
+     * @param array $param
+     * @return array
+     */
+    public function queryDeliverFee($param=[])
+    {
+        return $this->httpPost('/api/order/queryDeliverFee',$param);
+    }
+
+    /**
+     * 查询运费后发单
+     * @param array $param
+     * @return array
+     */
+    public function queryDeliverFee($param=[])
+    {
+        return $this->httpPost('/api/order/addAfterQuery',$param);
+    }
+
 }
