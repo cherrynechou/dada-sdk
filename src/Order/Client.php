@@ -64,7 +64,7 @@ class Client extends BaseClient
     {
         return $this->httpPost('/api/order/status/query',$param);
     }
-  
+
     /**
      * 添加小费
      * @param array $param
@@ -90,7 +90,7 @@ class Client extends BaseClient
      * @param array $param
      * @return array
      */
-    public function queryDeliverFee($param=[])
+    public function addAfterQuery($param=[])
     {
         return $this->httpPost('/api/order/addAfterQuery',$param);
     }
