@@ -64,7 +64,7 @@ class Client extends BaseClient
     {
         return $this->httpPost('/api/order/status/query',$param);
     }
-
+  
     /**
      * 添加小费
      * @param array $param
